@@ -107,3 +107,8 @@ function displayFinalMessage() {
 }
 
 startButton.addEventListener('click', startBreathing);
+
+// Inicia a reprodução da música de fundo quando a página é carregada
+window.addEventListener('load', () => {
+    backgroundMusic.play();
+});
