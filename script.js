@@ -3,6 +3,7 @@ const startButton = document.getElementById('startButton');
 const instruction = document.getElementById('instruction');
 const backgroundMusic = document.getElementById('backgroundMusic');
 const clickSound = document.getElementById('clickSound');
+const heartBeatSound = document.getElementById('heartBeatSound');
 
 let isBreathing = false;
 let breathInterval;
@@ -16,18 +17,21 @@ function startBreathing() {
     if (isBreathing) {
         clearInterval(breathInterval);
         startButton.textContent = 'Começar Respiração Guiada';
-        instruction.textContent = 'Clique no botão para começar.';
+        instruction.textContent = 'Produzido por Matheus Chiste';
         circle.style.transform = 'scale(1)';
         isBreathing = false;
         inhaleCount = 0;
         specialMessageShown = false;
         finalMessageShown = false;
-        backgroundMusic.pause();
-        backgroundMusic.currentTime = 0;
+        heartBeatSound.pause();
+        heartBeatSound.currentTime = 0;
+        backgroundMusic.play();
     } else {
         startButton.textContent = 'Parar Respiração Guiada';
+        instruction.textContent = 'Inspire...';
         isBreathing = true;
-        backgroundMusic.play();
+        backgroundMusic.pause();
+        heartBeatSound.play();
 
         let scale = 1;
         let isInhaling = true;

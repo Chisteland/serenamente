@@ -45,6 +45,10 @@ p {
     margin-bottom: 25px;
 }
 
+#instruction {
+    font-size: 2rem; /* Aumenta o tamanho do texto de instrução */
+}
+
 .circle-container {
     display: flex;
     justify-content: center;
@@ -76,6 +80,6 @@ button:hover {
 
 #instruction {
     margin-top: 20px;
-    font-size: 1rem;
+    font-size: 2rem; /* Aumenta o tamanho do texto de instrução */
     color: #a4b1c1;
 }
