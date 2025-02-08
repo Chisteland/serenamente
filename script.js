@@ -1,6 +1,8 @@
 const circle = document.querySelector('.circle');
 const startButton = document.getElementById('startButton');
 const instruction = document.getElementById('instruction');
+const backgroundMusic = document.getElementById('backgroundMusic');
+const clickSound = document.getElementById('clickSound');
 
 let isBreathing = false;
 let breathInterval;
@@ -9,6 +11,8 @@ let specialMessageShown = false;
 let finalMessageShown = false;
 
 function startBreathing() {
+    clickSound.play(); // Toca o som de clique
+
     if (isBreathing) {
         clearInterval(breathInterval);
         startButton.textContent = 'Começar Respiração Guiada';
@@ -18,9 +22,12 @@ function startBreathing() {
         inhaleCount = 0;
         specialMessageShown = false;
         finalMessageShown = false;
+        backgroundMusic.pause();
+        backgroundMusic.currentTime = 0;
     } else {
         startButton.textContent = 'Parar Respiração Guiada';
         isBreathing = true;
+        backgroundMusic.play();
 
         let scale = 1;
         let isInhaling = true;
